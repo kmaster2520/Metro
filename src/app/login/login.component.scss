@@ -1,19 +1,10 @@
-.loginForm {
-    padding: 20px;
-    text-align: center;
-}
-
-.login-container {
+.login-container, .register-container {
     background-color: white;
     border-radius: 10px;
-    align-items: center;
-    width: 40%;
 }
 
-input {
-    margin-bottom: 10px;
-}
 
-button {
-    margin: 10px;
+form {
+    padding: 15px;
+    text-align: center;
 }

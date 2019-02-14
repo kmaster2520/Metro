@@ -1,14 +1,21 @@
 <div class="jumbotron">
-  <div class="login-container container">
-    <form class="loginForm">
-      <h1>Login</h1><br>
-      <input name="username" placeholder="Username" [(ngModel)]="username"><br>
-      <input name="password" placeholder="Password" [(ngModel)]="password" type="password"><br>
-      <div class="row justify-content-center">
+  <div class="login-container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center">
+    <div>
+      <form #loginForm="ngForm" class="loginForm" (ngSubmit)="loginSubmit()">
+        <h1>Login</h1><br>
+        <input name="username" placeholder="Username" [(ngModel)]="username"><br>
+        <input name="password" placeholder="Password" [(ngModel)]="password" type="password"><br>
         <button type="submit" class="btn btn-primary">Login</button><br>
+      </form>
+    </div>
+    <div>
+      <form #registerForm="ngForm" class="registerForm" (ngSubmit)="registerSubmit()">
+        <h1>Register</h1><br>
+        <input name="reg_username" placeholder="Username" [(ngModel)]="reg_username"><br>
+        <input name="reg_password" placeholder="Password" [(ngModel)]="reg_password" type="password"><br>
+        <input name="reg_cpassword" placeholder="Confirm Password" [(ngModel)]="reg_cpassword" type="password"><br>
         <button type="submit" class="btn btn-secondary">Register</button><br>
-      </div>
-      
-    </form>
+      </form>
+    </div>
   </div>
 </div>
