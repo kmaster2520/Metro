@@ -1,21 +1,31 @@
 <div class="jumbotron">
-  <div class="login-container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center">
-    <div>
-      <form #loginForm="ngForm" class="loginForm" (ngSubmit)="loginSubmit()">
+  <div class="login-container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around">
+    <form #loginForm="ngForm" class="loginForm" (ngSubmit)="loginSubmit()">
+      <div fxLayout="column" fxLayoutAlign="center center">
         <h1>Login</h1><br>
-        <input name="username" placeholder="Username" [(ngModel)]="username"><br>
-        <input name="password" placeholder="Password" [(ngModel)]="password" type="password"><br>
-        <button type="submit" class="btn btn-primary">Login</button><br>
-      </form>
-    </div>
-    <div>
-      <form #registerForm="ngForm" class="registerForm" (ngSubmit)="registerSubmit()">
+        <mat-form-field>
+          <input matInput name="username" placeholder="Username" [(ngModel)]="username">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput name="password" placeholder="Password" [(ngModel)]="password" type="password">
+        </mat-form-field>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+    </form>
+    <form #registerForm="ngForm" class="registerForm" (ngSubmit)="registerSubmit()">
+      <div fxLayout="column" fxLayoutAlign="center center">
         <h1>Register</h1><br>
-        <input name="reg_username" placeholder="Username" [(ngModel)]="reg_username"><br>
-        <input name="reg_password" placeholder="Password" [(ngModel)]="reg_password" type="password"><br>
-        <input name="reg_cpassword" placeholder="Confirm Password" [(ngModel)]="reg_cpassword" type="password"><br>
-        <button type="submit" class="btn btn-secondary">Register</button><br>
-      </form>
-    </div>
+        <mat-form-field>
+          <input matInput name="reg_username" placeholder="Username" [(ngModel)]="reg_username">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput name="reg_password" placeholder="Password" [(ngModel)]="reg_password" type="password">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput name="reg_cpassword" placeholder="Confirm Password" [(ngModel)]="reg_cpassword" type="password">
+        </mat-form-field>
+      </div>
+      <button type="submit" class="btn btn-secondary">Register</button><br>
+    </form>
   </div>
 </div>
