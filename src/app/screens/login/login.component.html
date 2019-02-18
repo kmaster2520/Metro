@@ -1,0 +1,16 @@
+<div class="jumbotron" fxLayout="row" fxLayoutAlign="center">
+  <div class="main-content">
+    <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <h1>Login</h1><br>
+        <mat-form-field>
+          <input matInput formControlName="username" placeholder="Username">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName="password" placeholder="Password" type="password">
+        </mat-form-field>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
