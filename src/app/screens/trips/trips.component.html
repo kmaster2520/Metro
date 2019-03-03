@@ -1,0 +1,31 @@
+<div class="jumbotron" fxLayout="row" fxLayoutAlign="center">
+  <div class="main-content-large" fxLayout="column" fxLayoutAlign="flex-start stretch">
+    <!-- New Trip -->
+    <div>
+      <h1>Start New Trip</h1>
+      <div class="new-trip-form">
+        <form [formGroup]="newTripForm" (ngSubmit)="newTripSubmit()">
+          <div fxLayout="row" fxLayoutAlign="space-around">
+            <!-- Select Line -->
+            <mat-form-field>
+              <mat-select placeholder="Line" formControlName="selectedLine" (selectionChange)="resetStation()">
+                <mat-option *ngFor="let line of lines" [value]="line">{{ line }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <!-- Select Station -->
+            <mat-form-field>
+              <mat-select placeholder="Station" formControlName="selectedStation" [disabled]="!selectedLine.value">
+                <mat-option *ngFor="let station of stations[selectedLine.value]" [value]="station">{{ station.name }} - {{ station.cost }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <button type="submit" class="btn btn-primary">Start Trip</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Trip History -->
+    <div>
+      <h1>Recent Trip History</h1>
+    </div>
+  </div>
+</div>

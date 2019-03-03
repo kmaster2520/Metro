@@ -2,15 +2,28 @@
   <div class="main-content">
     <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
       <div fxLayout="column" fxLayoutAlign="center center">
-        <h1>Login</h1><br>
+        <h1>Login</h1>
+        <!-- Username Field -->
         <mat-form-field>
           <input matInput formControlName="username" placeholder="Username">
         </mat-form-field>
+        <!-- Username Errors -->
+        <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
+            <div *ngIf="username.errors.required">Username is required. </div>
+            <div *ngIf="username.errors.minlength">Username is too short. </div>
+        </div>
+        <!-- Password Field -->
         <mat-form-field>
           <input matInput formControlName="password" placeholder="Password" type="password">
         </mat-form-field>
+        <!-- Password Errors -->
+        <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
+            <div *ngIf="password.errors.required">Password is required. </div>
+        </div>
+        <!-- Submit Button -->
         <button type="submit" class="btn btn-primary">Login</button>
       </div>
     </form>
+    <a routerLink="/register">Sign Up</a>
   </div>
 </div>
